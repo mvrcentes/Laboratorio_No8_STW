@@ -19,22 +19,24 @@ export const Primary = {
     },
 }
 
-export const Secondary = {
+export const Grama = {
     args: {
         label: "Way",
+        backgroundImage: "grama",
     },
 }
 
-export const Large = {
+export const Agua = {
     args: {
-        size: "large",
         label: "Way",
+        backgroundImage: "agua",
     },
 }
 
-export const Small = {
+export const Espacio = {
     args: {
-        size: "small",
         label: "Way",
+        backgroundImage: "espacio",
     },
 }
+

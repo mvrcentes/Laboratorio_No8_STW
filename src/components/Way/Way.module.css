@@ -3,3 +3,24 @@
     width: 50px;
     background-color: #53f16f;
 }
+
+.Way__grama {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Way/grama.jpg');
+    background-size: 50px 50px;
+}
+
+.Way__agua {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Way/agua.jpg');
+    background-size: 50px 50px;
+}
+
+.Way__espacio {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Way/espacio.jpg');
+    background-size: 50px 50px;
+}
