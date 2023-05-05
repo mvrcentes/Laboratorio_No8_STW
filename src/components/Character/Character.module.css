@@ -1,0 +1,26 @@
+.Character {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.Character__sapo {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Character/sapo.png');
+    background-size: 50px 50px;
+}
+
+.Character__pato {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Character/pato.png');
+    background-size: 50px 50px;
+}
+
+.Character__nave {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Character/nave.png');
+    background-size: 50px 50px;
+}
