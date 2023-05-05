@@ -19,22 +19,23 @@ export const Primary = {
     },
 }
 
-export const Secondary = {
+export const Tierra = {
     args: {
         label: "Wall",
+        backgroundImage: "tierra",
     },
 }
 
-export const Large = {
+export const Trampa = {
     args: {
-        size: "large",
         label: "Wall",
+        backgroundImage: "trampa",
     },
 }
 
-export const Small = {
+export const Asteroides = {
     args: {
-        size: "small",
         label: "Wall",
+        backgroundImage: "asteroides",
     },
 }

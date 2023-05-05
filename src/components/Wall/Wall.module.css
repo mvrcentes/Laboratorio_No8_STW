@@ -3,3 +3,24 @@
     width: 50px;
     background-color: black;
 }
+
+.Wall__tierra {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Wall/tierra.jpg');
+    background-size: 50px 50px;
+}
+
+.Wall__trampra {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Wall/trampa.jpg');
+    background-size: 50px 50px;
+}
+
+.Wall__asteroides {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Wall/asteroides.jpg');
+    background-size: 50px 50px;
+}
