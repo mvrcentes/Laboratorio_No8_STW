@@ -1,0 +1,9 @@
+.Item {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Item:hover {
+    background-color: #f5f5f5;
+}
