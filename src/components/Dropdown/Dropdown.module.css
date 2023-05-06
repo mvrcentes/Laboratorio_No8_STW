@@ -1,0 +1,25 @@
+.Dropdown {
+    padding: 25px;
+    width: 400px;
+}
+
+.Dropdown__button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    box-shadow:  3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    font-weight: bold;
+}
+
+.Dropdown__container {
+    position: absolute;
+    /* left: 3.6%; */
+    top: 35%;
+    padding: 15px;
+    background-color: white;
+    box-shadow:  3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    font-weight: 500;
+    width: 370px;
+}
