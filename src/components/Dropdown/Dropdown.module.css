@@ -14,8 +14,9 @@
 }
 
 .Dropdown__container {
-    position: absolute;
+    /* position: absolute; */
     /* left: 3.6%; */
+    margin-top: 10px;
     top: 35%;
     padding: 15px;
     background-color: white;
