@@ -1,0 +1,42 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: #D9CBBA;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.largo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ancho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.input {
+    height: 25px;
+    width: 40px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
