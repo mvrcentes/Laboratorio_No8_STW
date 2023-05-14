@@ -3,47 +3,59 @@ import React, { useState, useEffect } from "react"
 import { Wall } from "../Wall/Wall"
 import { Way } from "../Way/Way"
 import { Character } from "../Character/Character"
+import { Modal } from "../Modal/Modal"
 
 import styles from "./Maze.module.css"
 
-let data = [
-    [1, 2, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],
-    [1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
-    [1, 0, 1, 0, 1, 0, 0, 1, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 1],
-    [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 1, 1, 1, 0, 0, 1, 1, 1],
-]
+export const Maze = ({ prompt }) => {
+    const [win, setWin] = useState(false)
+    const [lost, setLost] = useState(false)
+    const [maze, setMaze] = useState([])
 
-export const Maze = ({  }) => {
-    const [position, setPosition] = useState({ x: 1, y: 1 })
+    const fetchMaze = async () => {
+        const response = await fetch(
+            `https://maze.uvgenios.online/?type=json&w=${prompt.ancho}&h=${prompt.largo}`
+        )
+        const data = await response.json()
+        setMaze(data)
+    }
 
     const movePlayer = (dx, dy) => {
-        let [x, y] = [-1, -1]
+        console.log("move palyyer")
+        setMaze((oldMaze) => {
+            console.log("entro")
+            const newMaze = [...oldMaze]
 
+            let [x, y] = [null, null]
 
-        for (let i = 0; i < data.length; i++) {
-            const index = data[i].indexOf(2)
-            if (index !== -1) {
-                
-                x = index
-                y = i
-                break
+            for (let i = 0; i < oldMaze.length; i++) {
+                const index = oldMaze[i].indexOf("p")
+                if (index !== -1) {
+                    x = index
+                    y = i
+                    break
+                }
             }
-        }
 
-        if (data[y + dy][x + dx] === 0) {
-            data[y][x] = 0
-            data[y + dy][x + dx] = 2
-            setPosition({ x: x + dx, y: y + dy })
-        }
-
-        console.log(data)
+            if (newMaze[y + dy][x + dx] === " ") {
+                newMaze[y][x] = " "
+                newMaze[y + dy][x + dx] = "p"
+            }
+            
+            if (newMaze[y + dy][x + dx] === "g") {
+                // setWin(true)
+            }
+            return newMaze
+        })
     }
 
     useEffect(() => {
+        fetchMaze()
+    }, [])
+
+    useEffect(() => {
         const handleKeyPress = (event) => {
+            console.log("key pressed")
             switch (event.key) {
                 case "ArrowUp":
                     movePlayer(0, -1)
@@ -65,22 +77,37 @@ export const Maze = ({  }) => {
         return () => {
             document.removeEventListener("keydown", handleKeyPress)
         }
-    }, [position])
-
-    
+    }, [])
 
     return (
         <div className={styles.Maze}>
-            {data.map((row, i) => {
+            {maze.map((row, i) => {
                 return (
                     <div key={i} className={styles.Maze__row}>
                         {row.map((cell, j) => {
-                            if (cell === 1) {
-                                return <Wall key={j} />
-                            } else if (cell === 0) {
-                                return <Way key={j} />
-                            } else if (cell === 2) {
-                                return <Character key={j} />
+                            if (cell === "+" || cell === "-" || cell === "|") {
+                                return (
+                                    <Wall
+                                        key={j}
+                                        backgroundImage={prompt.wall}
+                                    />
+                                )
+                            } else if (cell === " ") {
+                                return (
+                                    <Way
+                                        key={j}
+                                        backgroundImage={prompt.path}
+                                    />
+                                )
+                            } else if (cell === "p") {
+                                return (
+                                    <Character
+                                        key={j}
+                                        backgroundImage={prompt.character}
+                                    />
+                                )
+                            } else if (cell === "g") {
+                                return <Way key={j} backgroundImage="meta" />
                             } else {
                                 return null
                             }
@@ -88,6 +115,15 @@ export const Maze = ({  }) => {
                     </div>
                 )
             })}
+
+            <Modal
+                modal={win}
+                nombre="Ganaste"
+                onClick={() => {
+                    setWin(false)
+                }}
+            />
+            <Modal modal={lost} nombre="Perdiste" />
         </div>
     )
 }
