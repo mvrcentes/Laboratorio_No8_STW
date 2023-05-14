@@ -17,7 +17,7 @@ export const Way = ({ backgroundImage }) => {
 }
 
 Way.propTypes = {
-    backgroundImage: PropTypes.oneOf(["grama", "agua", "espacio"]),
+    backgroundImage: PropTypes.oneOf(["grama", "agua", "espacio", "meta"]),
 }
 
 Way.defaultProps = {

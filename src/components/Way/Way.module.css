@@ -24,3 +24,10 @@
     background-image: url('../../assets/Way/espacio.jpg');
     background-size: 50px 50px;
 }
+
+.Way__meta {
+    height: 50px;
+    width: 50px;
+    background-image: url('../../assets/Way/meta.png');
+    background-size: 50px 50px;
+}

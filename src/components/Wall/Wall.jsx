@@ -22,3 +22,5 @@ Wall.propTypes = {
 Wall.defaultProps = {
     backgroundImage: null,
 }
+
+

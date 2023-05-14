@@ -1,0 +1,36 @@
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9CBBA;
+    border-radius: 15px;
+    gap: 20px;
+    padding: 15px;
+}
+
+.input {
+    height: 25px;
+    width: 40px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.button {
+    background-color: #fff;
+    border: 2px solid #4a3e64;
+    color: #4a3e64;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+}
