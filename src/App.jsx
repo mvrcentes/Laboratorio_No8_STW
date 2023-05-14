@@ -1,10 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./App.css"
 
-import { Maze } from "./components/Maze/Maze"
+import { Routes, Route } from "react-router-dom"
+
+import { Menu } from "./pages/Menu"
+import { Game } from "./pages/Game"
+import { Result } from "./pages/Result"
 
 function App() {
-    return <Maze />
+    return (
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<Menu />} />
+                <Route path="/game" element={<Game />} />
+                <Route path="/result" element={<Result />} />
+            </Routes>
+        </div>
+    )
 }
 
 export default App
