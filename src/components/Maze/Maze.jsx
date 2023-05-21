@@ -21,9 +21,7 @@ export const Maze = ({ prompt }) => {
     }
 
     const movePlayer = (dx, dy) => {
-        console.log("move palyyer")
         setMaze((oldMaze) => {
-            console.log("entro")
             const newMaze = [...oldMaze]
 
             let [x, y] = [null, null]
@@ -43,7 +41,7 @@ export const Maze = ({ prompt }) => {
             }
             
             if (newMaze[y + dy][x + dx] === "g") {
-                // setWin(true)
+                setWin(true)
             }
             return newMaze
         })
