@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 
 import { Wall } from "../Wall/Wall"
 import { Way } from "../Way/Way"
@@ -9,7 +10,7 @@ import styles from "./Maze.module.css"
 
 export const Maze = ({ prompt }) => {
     const [win, setWin] = useState(false)
-    const [lost, setLost] = useState(false)
+    const [lost ] = useState(false)
     const [maze, setMaze] = useState([])
 
     const fetchMaze = async () => {
@@ -39,7 +40,7 @@ export const Maze = ({ prompt }) => {
                 newMaze[y][x] = " "
                 newMaze[y + dy][x + dx] = "p"
             }
-            
+
             if (newMaze[y + dy][x + dx] === "g") {
                 setWin(true)
             }
@@ -124,4 +125,14 @@ export const Maze = ({ prompt }) => {
             <Modal modal={lost} nombre="Perdiste" />
         </div>
     )
+}
+
+Maze.propTypes = {
+    prompt: PropTypes.shape({
+        ancho: PropTypes.number.isRequired,
+        largo: PropTypes.number.isRequired,
+        wall: PropTypes.string.isRequired,
+        path: PropTypes.string.isRequired,
+        character: PropTypes.string.isRequired,
+    }).isRequired,
 }

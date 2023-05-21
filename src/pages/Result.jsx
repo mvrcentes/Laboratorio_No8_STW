@@ -1,9 +1,5 @@
-import React from 'react'
-
-import ConfigContext from '../Contexts/Config'
+import React from "react"
 
 export const Result = () => {
-  return (
-    <div>Result</div>
-  )
+    return <div>Result</div>
 }

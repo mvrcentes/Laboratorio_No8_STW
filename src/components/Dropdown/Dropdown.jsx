@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 
 import styles from "./Dropdown.module.css"
@@ -36,22 +36,10 @@ export const Dropdown = ({ name, items, selected, setSelected }) => {
 }
 
 Dropdown.propTypes = {
-    /**
-     * The name of the dropdown button (when no item is selected)
-     */
     name: PropTypes.string.isRequired,
-    /**
-     * The value of the selected item
-     * @example "sapo"
-     * @example "pato"
-     * @example "nave"
-     * @example null
-     */
     items: PropTypes.array.isRequired,
+    selected: PropTypes.string,
+    setSelected: PropTypes.func,
 }
 
-Dropdown.defaultProps = {
-    name: "Dropdown",
-}
-
-
+export default Dropdown

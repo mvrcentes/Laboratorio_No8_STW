@@ -1,4 +1,6 @@
-import { useState } from "react"
+import React from "react"
+import PropTypes from "prop-types"
+
 import { Link } from "react-router-dom"
 
 import styles from "./Modal.module.css"
@@ -23,4 +25,10 @@ export const Modal = ({ nombre, modal, onClick }) => {
             )}
         </>
     )
+}
+
+Modal.propTypes = {
+    nombre: PropTypes.string.isRequired,
+    modal: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
 }
